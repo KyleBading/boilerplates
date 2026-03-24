@@ -35,10 +35,10 @@ Install the Boilerplates CLI using the automated installer:
 
 ```bash
 # Install latest version
-curl -fsSL https://raw.githubusercontent.com/christianlempa/boilerplates/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KyleBading/boilerplates/main/scripts/install.sh | bash
 
 # Install specific version
-curl -fsSL https://raw.githubusercontent.com/christianlempa/boilerplates/main/scripts/install.sh | bash -s -- --version v1.2.3
+curl -fsSL https://raw.githubusercontent.com/KyleBading/boilerplates/main/scripts/install.sh | bash -s -- --version v1.2.3
 ```
 
 The installer uses `pipx` to create an isolated environment for the CLI tool. Once installed, the `boilerplates` command will be available in your terminal.
@@ -49,14 +49,14 @@ If you are using nix flakes
 
 ```bash
 # Run without installing
-nix run github:christianlempa/boilerplates -- --help
+nix run github:KyleBading/boilerplates -- --help
 
 # Install to your profile
-nix profile install github:christianlempa/boilerplates
+nix profile install github:KyleBading/boilerplates
 
 # Or directly in your flake
 {
-  inputs.boilerplates.url = "github:christianlempa/boilerplates";
+  inputs.boilerplates.url = "github:KyleBading/boilerplates";
 
   outputs = { self, nixpkgs, boilerplates }: {
     # Use boilerplates.packages.${system}.default
@@ -64,7 +64,7 @@ nix profile install github:christianlempa/boilerplates
 }
 
 # Use in a temporary shell
-nix shell github:christianlempa/boilerplates
+nix shell github:KyleBading/boilerplates
 ```
 
 ### Quick Start
@@ -129,7 +129,7 @@ boilerplates repo remove my-templates
 
 ## Documentation
 
-Originally created by Christian Lempa. His repo was forked into this one.
+Originally created by Christian Lempa, whos repo was forked into this one.
 
 For comprehensive documentation, advanced usage, and template development guides, visit [Christian Lempa's YouTube Channel](https://www.youtube.com/@christianlempa).
 
