@@ -2,7 +2,7 @@
 
 ## What are Boilerplates?
 
-**Boilerplates** is a curated collection of production-ready templates for your homelab and infrastructure projects. Stop copying configurations from random GitHub repos or starting from scratch every time you spin up a new service!
+**Boilerplates** is a collection of production-ready templates for your homelab and infrastructure projects. Stop copying configurations from random GitHub repos or starting from scratch every time you spin up a new service!
 
 ## Boilerplates CLI
 
@@ -131,13 +131,13 @@ boilerplates repo remove my-templates
 
 Originally created by Christian Lempa. His repo was forked into this one.
 
-For comprehensive documentation, advanced usage, and template development guides, visit [YouTube Channel](https://www.youtube.com/@christianlempa).
+For comprehensive documentation, advanced usage, and template development guides, visit [Christian Lempa's YouTube Channel](https://www.youtube.com/@christianlempa).
 
 ## Contribution
 
 ## Other Resources
 
-- [Cheat-Sheets](https://github.com/christianlempa/cheat-sheets) - Command Reference for various tools and technologies
+- [Cheat-Sheets Repo](https://github.com/christianlempa/cheat-sheets) - Command Reference for various tools and technologies
 
 ---
 
