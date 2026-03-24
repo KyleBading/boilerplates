@@ -1,10 +1,4 @@
-# Christian's `Boilerplates`
-
-[![Welcome](https://cnd-prod-1.s3.us-west-004.backblazeb2.com/new-banner4-scaled-for-github.jpg)](https://youtu.be/apgp9egIKK8)
-
-**Hey, there!**
-
-**I'm Christian, and I'm passionate about creating educational tech content for IT Pros and Homelab nerds.**
+# Kyle's `Boilerplates`
 
 ## What are Boilerplates?
 
@@ -20,8 +14,6 @@ Each template includes sensible defaults, best practices, and common configurati
 - 🚀 **Quick Setup** - Generate complete project structures in seconds
 - 🔧 **Fully Customizable** - Interactive prompts or non-interactive mode with variable overrides
 - 💾 **Smart Defaults** - Save your preferred values and reuse across projects
-
-> **Note:** Technologies evolve rapidly. While I actively maintain these templates, always review generated configurations before deploying to production.
 
 ### Requirements
 
@@ -137,26 +129,15 @@ boilerplates repo remove my-templates
 
 ## Documentation
 
-For comprehensive documentation, advanced usage, and template development guides, check out the **[Wiki](../../wiki)** _(coming soon)_.
+Originally created by Christian Lempa. His repo was forked into this one.
 
-If you're looking for detailed tutorials on specific tools and technologies, visit my [YouTube Channel](https://www.youtube.com/@christianlempa).
+For comprehensive documentation, advanced usage, and template development guides, visit [YouTube Channel](https://www.youtube.com/@christianlempa).
 
 ## Contribution
 
-If you’d like to contribute to this project, reach out to me on social media or [Discord](https://christianlempa.de/discord), or create a pull request for the necessary changes.
-
 ## Other Resources
 
-- [Dotfiles](https://github.com/christianlempa/dotfiles) - My personal configuration files on macOS
 - [Cheat-Sheets](https://github.com/christianlempa/cheat-sheets) - Command Reference for various tools and technologies
-
-## Support me
-
-Creating high-quality videos and valuable resources that are accessible to everyone, free of charge, is a huge challenge. With your contribution, I can dedicate more time and effort into the creation process, which ultimately enhances the quality of the content. So, all your support, by becoming a member, truly makes a significant impact on what I do. And you’ll also get some cool benefits and perks in return, as a recognition of your support.
-
-Remember, ***supporting me is entirely optional.*** Your choice to become a member or not won't change your access to my videos and resources. You are also welcome to reach out to me on Discord, if you have any questions or feedback.
-
-[https://www.patreon.com/christianlempa](https://www.patreon.com/christianlempa)
 
 ---
 
