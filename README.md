@@ -11,9 +11,9 @@ The Boilerplates CLI tool gives you instant access to battle-tested templates fo
 Each template includes sensible defaults, best practices, and common configuration patterns—so you can focus on customizing for your environment.
 
 **Key Features:**
-- 🚀 **Quick Setup** - Generate complete project structures in seconds
-- 🔧 **Fully Customizable** - Interactive prompts or non-interactive mode with variable overrides
-- 💾 **Smart Defaults** - Save your preferred values and reuse across projects
+- **Quick Setup** - Generate complete project structures in seconds
+- **Fully Customizable** - Interactive prompts or non-interactive mode with variable overrides
+- **Smart Defaults** - Save your preferred values and reuse across projects
 
 ### Requirements
 
