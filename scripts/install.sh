@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_OWNER="christianlempa"
+REPO_OWNER="KyleBading"
 REPO_NAME="boilerplates"
 VERSION="${VERSION:-latest}"
 AUTO_INSTALL="${AUTO_INSTALL:-true}"
