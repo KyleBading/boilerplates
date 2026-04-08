@@ -10,10 +10,9 @@ This keeps:
 
     Rendered HCL: what Packer actually builds with, versioned separately if needed.
 
-Ansible is a top choice because your homelab already uses it for provisioning, and Packer has a native ansible provisioner for post-build config — making this a natural pre-build step.
-Common repo patterns
+Ansible is a top choice because it is already used it for provisioning, and Packer has a native ansible provisioner for post-build config — making this a natural pre-build step.
 
-Structure matches established boilerplates:
+Build structure matches established boilerplates:
 
     Pre-render: Ansible/Make renders .j2 + YAML → .pkr.hcl (the playbook does this).
 
