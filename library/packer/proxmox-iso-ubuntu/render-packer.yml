@@ -1,0 +1,65 @@
+---
+- name: Render Packer files from boilerplate YAML + Jinja2
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars_files:
+    - template.yaml
+
+  tasks:
+    - name: Build flat variable map from template schema defaults
+      ansible.builtin.set_fact:
+        packer_vars: >-
+          {{
+            dict(
+              (spec | dict2items
+               | map(attribute='value.vars')
+               | map('default', {})
+               | map('dict2items')
+               | flatten
+               | map(attribute='key')
+               | zip(
+                   spec | dict2items
+                   | map(attribute='value.vars')
+                   | map('default', {})
+                   | map('dict2items')
+                   | flatten
+                   | map(attribute='value')
+                   | map(attribute='default')
+                 )
+              )
+            )
+          }}
+
+    - name: Show resolved defaults
+      ansible.builtin.debug:
+        var: packer_vars
+
+    - name: Render Packer HCL template
+      ansible.builtin.template:
+        src: proxmox-iso-ubuntu.pkr.hcl.j2
+        dest: proxmox-iso-ubuntu.pkr.hcl
+        mode: '0644'
+      vars: "{{ packer_vars }}"
+
+    - name: Render cloud-init user-data
+      ansible.builtin.template:
+        src: http/user-data.j2
+        dest: http/user-data
+        mode: '0644'
+      vars: "{{ packer_vars }}"
+
+    - name: Copy example vars file if real vars file does not exist
+      ansible.builtin.copy:
+        src: variables.pkrvars.hcl.example
+        dest: variables.pkrvars.hcl
+        mode: '0600'
+        force: false
+
+    - name: Reminder about secrets
+      ansible.builtin.debug:
+        msg:
+          - "Rendered proxmox-iso-ubuntu.pkr.hcl and http/user-data"
+          - "Review variables.pkrvars.hcl and set proxmox_api_token_secret before packer build"
+          - "Run: packer init . && packer build -var-file=variables.pkrvars.hcl proxmox-iso-ubuntu.pkr.hcl"
