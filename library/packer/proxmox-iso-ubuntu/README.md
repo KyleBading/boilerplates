@@ -31,3 +31,21 @@ Next-level improvements
     Makefile wrapper: make render runs the playbook, make build runs Packer.
 
     GitHub Actions for automated builds on tag pushes.
+
+
+What render-packer.yml does
+The playbook loads template.yaml, pulls the default value from each spec.*.vars.* entry, flattens those into a single variable map, and uses that map to render proxmox-iso-ubuntu.pkr.hcl.j2 into a real proxmox-iso-ubuntu.pkr.hcl plus http/user-data.j2 into http/user-data.
+
+It also copies variables.pkrvars.hcl.example to variables.pkrvars.hcl if that file does not already exist, so you have a place to put the Proxmox API secret and any runtime overrides before running Packer.
+
+Why?
+The Jinja Packer template is not referencing nested YAML paths like spec.general.vars.image_name.default; it is referencing flat names like {{ image_name }} and {{ disk_storage }}, so a straight vars_files: template.yaml alone would not be enough without transforming the YAML shape first.
+This playbook handles that mismatch by converting the structured YAML schema into the flat variable names your .j2 files actually expect.
+
+How to use it
+Place the playbook in the same directory as your Packer boilerplate files, then run ansible-playbook render-packer.yml to generate the real files Ansible will render for Packer and cloud-init.
+
+After that, review variables.pkrvars.hcl, set your real proxmox_api_token_secret, and run packer init . && packer build -var-file=variables.pkrvars.hcl proxmox-iso-ubuntu.pkr.hcl.
+
+One caveat
+Your variables.pkrvars.hcl.example currently only covers the Proxmox API variables, while many of the build settings are coming from defaults in template.yaml, so if you want environment-specific builds later, the clean next step is to add an overrides file or move more runtime values into variables.pkrvars.hcl.
